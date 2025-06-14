@@ -533,5 +533,395 @@ public class ApplicationDbContext : DbContext
                 Color = "#8b5cf6", IsFinalState = false, IsActive = true, CreatedAt = fechaSemilla
             }
         );
+
+        // ================================
+        // SEED DATA - PRODUCTS
+        // ================================
+
+        // Seed Products
+        modelBuilder.Entity<Product>().HasData(
+            // FOOD (CategoryId = 1)
+            new Product
+            {
+                Id = 1, Name = "Arroz Blanco", Description = "Arroz blanco de grano largo 1kg", CurrentStock = 25,
+                MinimumStock = 10, UnitId = 2, Price = 3.50m, CategoryId = 1, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 2, Name = "Aceite de Oliva", Description = "Aceite de oliva virgen extra 500ml", CurrentStock = 8,
+                MinimumStock = 5, UnitId = 8, Price = 8.90m, CategoryId = 1, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 3, Name = "Pan de Molde", Description = "Pan de molde integral 500g", CurrentStock = 2,
+                MinimumStock = 5, UnitId = 1, Price = 1.80m, CategoryId = 1, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low stock
+            new Product
+            {
+                Id = 4, Name = "Huevos Frescos", Description = "Huevos frescos de granja", CurrentStock = 0,
+                MinimumStock = 3, UnitId = 10, Price = 4.20m, CategoryId = 1, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Out stock
+            new Product
+            {
+                Id = 5, Name = "Leche Entera", Description = "Leche entera pasteurizada 1L", CurrentStock = 15,
+                MinimumStock = 8, UnitId = 4, Price = 2.50m, CategoryId = 1, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 6, Name = "Azúcar Blanca", Description = "Azúcar refinada 1kg", CurrentStock = 1, MinimumStock = 4,
+                UnitId = 2, Price = 2.20m, CategoryId = 1, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low stock
+
+            // DRINKS (CategoryId = 2)
+            new Product
+            {
+                Id = 7, Name = "Agua Mineral", Description = "Agua mineral natural 1.5L", CurrentStock = 30,
+                MinimumStock = 12, UnitId = 8, Price = 1.20m, CategoryId = 2, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 8, Name = "Coca Cola", Description = "Refresco de cola 2L", CurrentStock = 5, MinimumStock = 6,
+                UnitId = 8, Price = 3.50m, CategoryId = 2, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low stock
+            new Product
+            {
+                Id = 9, Name = "Jugo de Naranja", Description = "Jugo natural de naranja 1L", CurrentStock = 8,
+                MinimumStock = 4, UnitId = 7, Price = 2.80m, CategoryId = 2, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 10, Name = "Cerveza Artesanal", Description = "Cerveza artesanal 330ml", CurrentStock = 0,
+                MinimumStock = 6, UnitId = 8, Price = 2.50m, CategoryId = 2, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Out stock
+            new Product
+            {
+                Id = 11, Name = "Café Molido", Description = "Café molido natural 500g", CurrentStock = 12,
+                MinimumStock = 5, UnitId = 6, Price = 7.50m, CategoryId = 2, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+
+            // CLEANING (CategoryId = 3)
+            new Product
+            {
+                Id = 12, Name = "Detergente Líquido", Description = "Detergente para ropa 2L", CurrentStock = 6,
+                MinimumStock = 3, UnitId = 8, Price = 12.50m, CategoryId = 3, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 13, Name = "Papel Higiénico", Description = "Papel higiénico suave 12 rollos", CurrentStock = 1,
+                MinimumStock = 2, UnitId = 6, Price = 8.90m, CategoryId = 3, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low stock
+            new Product
+            {
+                Id = 14, Name = "Limpiavidrios", Description = "Spray limpiavidrios 500ml", CurrentStock = 4,
+                MinimumStock = 2, UnitId = 8, Price = 4.50m, CategoryId = 3, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 15, Name = "Lejía", Description = "Lejía desinfectante 1L", CurrentStock = 0, MinimumStock = 3,
+                UnitId = 8, Price = 2.50m, CategoryId = 3, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Out stock
+            new Product
+            {
+                Id = 16, Name = "Esponjas Cocina", Description = "Esponjas de cocina pack x6", CurrentStock = 8,
+                MinimumStock = 4, UnitId = 6, Price = 3.20m, CategoryId = 3, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+
+            // PERSONAL HYGIENE (CategoryId = 4)
+            new Product
+            {
+                Id = 17, Name = "Champú", Description = "Champú para cabello normal 400ml", CurrentStock = 5,
+                MinimumStock = 3, UnitId = 8, Price = 6.80m, CategoryId = 4, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 18, Name = "Pasta Dental", Description = "Pasta dental con flúor 100ml", CurrentStock = 2,
+                MinimumStock = 4, UnitId = 9, Price = 3.20m, CategoryId = 4, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low stock
+            new Product
+            {
+                Id = 19, Name = "Jabón de Manos", Description = "Jabón líquido antibacterial 250ml", CurrentStock = 7,
+                MinimumStock = 3, UnitId = 8, Price = 4.90m, CategoryId = 4, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 20, Name = "Desodorante", Description = "Desodorante en aerosol 150ml", CurrentStock = 0,
+                MinimumStock = 2, UnitId = 1, Price = 5.50m, CategoryId = 4, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Out stock
+            new Product
+            {
+                Id = 21, Name = "Gel de Ducha", Description = "Gel de ducha hidratante 500ml", CurrentStock = 9,
+                MinimumStock = 4, UnitId = 8, Price = 6.20m, CategoryId = 4, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+
+            // MEDICINES (CategoryId = 5)
+            new Product
+            {
+                Id = 22, Name = "Paracetamol 500mg", Description = "Analgésico y antifebril", CurrentStock = 45,
+                MinimumStock = 20, UnitId = 1, Price = 0.15m, CategoryId = 5, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 23, Name = "Alcohol 70%", Description = "Alcohol etílico desinfectante 250ml", CurrentStock = 3,
+                MinimumStock = 5, UnitId = 8, Price = 2.50m, CategoryId = 5, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low stock
+            new Product
+            {
+                Id = 24, Name = "Vendas Elásticas", Description = "Vendas elásticas 5cm x 4.5m", CurrentStock = 8,
+                MinimumStock = 4, UnitId = 1, Price = 3.80m, CategoryId = 5, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 25, Name = "Ibuprofeno 400mg", Description = "Antiinflamatorio", CurrentStock = 0,
+                MinimumStock = 15, UnitId = 1, Price = 0.20m, CategoryId = 5, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Out stock
+            new Product
+            {
+                Id = 26, Name = "Vitamina C", Description = "Suplemento vitamina C 1000mg", CurrentStock = 25,
+                MinimumStock = 10, UnitId = 1, Price = 0.25m, CategoryId = 5, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+
+            // HOME (CategoryId = 6)
+            new Product
+            {
+                Id = 27, Name = "Bombillas LED", Description = "Bombilla LED 10W luz cálida", CurrentStock = 8,
+                MinimumStock = 5, UnitId = 1, Price = 4.50m, CategoryId = 6, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 28, Name = "Pilas AA", Description = "Pilas alcalinas AA pack x4", CurrentStock = 2,
+                MinimumStock = 6, UnitId = 6, Price = 6.80m, CategoryId = 6, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low stock
+            new Product
+            {
+                Id = 29, Name = "Velas Aromáticas", Description = "Velas aromáticas de lavanda", CurrentStock = 12,
+                MinimumStock = 4, UnitId = 1, Price = 8.90m, CategoryId = 6, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 30, Name = "Papel Aluminio", Description = "Rollo papel aluminio 25m", CurrentStock = 0,
+                MinimumStock = 3, UnitId = 1, Price = 3.20m, CategoryId = 6, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Out stock
+
+            // PEETS (CategoryId = 7)
+            new Product
+            {
+                Id = 31, Name = "Comida para Perros", Description = "Alimento balanceado para perros 3kg",
+                CurrentStock = 5, MinimumStock = 3, UnitId = 2, Price = 15.50m, CategoryId = 7, IsActive = true,
+                CreatedAt = fechaSemilla, UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 32, Name = "Arena para Gatos", Description = "Arena sanitaria para gatos 5kg", CurrentStock = 1,
+                MinimumStock = 4, UnitId = 2, Price = 8.90m, CategoryId = 7, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low stock
+            new Product
+            {
+                Id = 33, Name = "Juguete para Perros", Description = "Pelota de goma resistente", CurrentStock = 8,
+                MinimumStock = 3, UnitId = 1, Price = 6.50m, CategoryId = 7, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 34, Name = "Shampoo para Mascotas", Description = "Shampoo neutro para perros y gatos 500ml",
+                CurrentStock = 0, MinimumStock = 2, UnitId = 8, Price = 12.80m, CategoryId = 7, IsActive = true,
+                CreatedAt = fechaSemilla, UpdatedAt = fechaSemilla
+            }, // Out stock
+
+            // OTHERS (CategoryId = 8)
+            new Product
+            {
+                Id = 35, Name = "Cargador USB", Description = "Cargador universal USB tipo C", CurrentStock = 4,
+                MinimumStock = 2, UnitId = 1, Price = 12.50m, CategoryId = 8, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 36, Name = "Paraguas", Description = "Paraguas compacto resistente al viento", CurrentStock = 1,
+                MinimumStock = 3, UnitId = 1, Price = 18.90m, CategoryId = 8, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            }, // Low Stock
+            new Product
+            {
+                Id = 37, Name = "Linterna LED", Description = "Linterna LED recargable", CurrentStock = 6,
+                MinimumStock = 2, UnitId = 1, Price = 15.20m, CategoryId = 8, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            },
+            new Product
+            {
+                Id = 38, Name = "Mascarillas", Description = "Mascarillas desechables caja x50", CurrentStock = 0,
+                MinimumStock = 5, UnitId = 7, Price = 8.50m, CategoryId = 8, IsActive = true, CreatedAt = fechaSemilla,
+                UpdatedAt = fechaSemilla
+            } // Out stock
+        );
+
+        // ================================
+        // SEED DATA - ALERTS OF INVENTORY
+        // ================================
+
+        // Seed InventoryAlerts (for products with low stock or no stock)
+        modelBuilder.Entity<InventoryAlert>().HasData(
+            // ALERT OF LOW STOCK
+            new InventoryAlert
+            {
+                Id = 1, ProductId = 3, AlertTypeId = 1, AlertStatusId = 1,
+                Message = "Pan de Molde: Stock actual (2) por debajo del mínimo (5)", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 2, ProductId = 6, AlertTypeId = 1, AlertStatusId = 1,
+                Message = "Azúcar Blanca: Stock actual (1) por debajo del mínimo (4)", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 3, ProductId = 8, AlertTypeId = 1, AlertStatusId = 2,
+                Message = "Coca Cola: Stock actual (5) por debajo del mínimo (6)",
+                CreatedAt = fechaSemilla.AddHours(-2), AcknowledgedAt = fechaSemilla.AddHours(-1)
+            },
+            new InventoryAlert
+            {
+                Id = 4, ProductId = 13, AlertTypeId = 1, AlertStatusId = 1,
+                Message = "Papel Higiénico: Stock actual (1) por debajo del mínimo (2)", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 5, ProductId = 18, AlertTypeId = 1, AlertStatusId = 1,
+                Message = "Pasta Dental: Stock actual (2) por debajo del mínimo (4)", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 6, ProductId = 23, AlertTypeId = 1, AlertStatusId = 1,
+                Message = "Alcohol 70%: Stock actual (3) por debajo del mínimo (5)", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 7, ProductId = 28, AlertTypeId = 1, AlertStatusId = 1,
+                Message = "Pilas AA: Stock actual (2) por debajo del mínimo (6)", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 8, ProductId = 32, AlertTypeId = 1, AlertStatusId = 1,
+                Message = "Arena para Gatos: Stock actual (1) por debajo del mínimo (4)", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 9, ProductId = 36, AlertTypeId = 1, AlertStatusId = 1,
+                Message = "Paraguas: Stock actual (1) por debajo del mínimo (3)", CreatedAt = fechaSemilla
+            },
+
+            // ALERT OF NO STOCK
+            new InventoryAlert
+            {
+                Id = 10, ProductId = 4, AlertTypeId = 2, AlertStatusId = 1,
+                Message = "Huevos Frescos: Producto completamente agotado", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 11, ProductId = 10, AlertTypeId = 2, AlertStatusId = 1,
+                Message = "Cerveza Artesanal: Producto completamente agotado", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 12, ProductId = 15, AlertTypeId = 2, AlertStatusId = 1,
+                Message = "Lejía: Producto completamente agotado", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 13, ProductId = 20, AlertTypeId = 2, AlertStatusId = 2,
+                Message = "Desodorante: Producto completamente agotado", CreatedAt = fechaSemilla.AddHours(-3),
+                AcknowledgedAt = fechaSemilla.AddHours(-2)
+            },
+            new InventoryAlert
+            {
+                Id = 14, ProductId = 25, AlertTypeId = 2, AlertStatusId = 1,
+                Message = "Ibuprofeno 400mg: Producto completamente agotado", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 15, ProductId = 30, AlertTypeId = 2, AlertStatusId = 1,
+                Message = "Papel Aluminio: Producto completamente agotado", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 16, ProductId = 34, AlertTypeId = 2, AlertStatusId = 1,
+                Message = "Shampoo para Mascotas: Producto completamente agotado", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 17, ProductId = 38, AlertTypeId = 2, AlertStatusId = 1,
+                Message = "Mascarillas: Producto completamente agotado", CreatedAt = fechaSemilla
+            },
+
+            // ALERTS OF EXPIRING SOON (simulated)
+            new InventoryAlert
+            {
+                Id = 18, ProductId = 5, AlertTypeId = 3, AlertStatusId = 3,
+                Message = "Leche Entera: Próxima a vencer en 3 días", CreatedAt = fechaSemilla.AddDays(-2),
+                AcknowledgedAt = fechaSemilla.AddDays(-1), ResolvedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 19, ProductId = 9, AlertTypeId = 3, AlertStatusId = 1,
+                Message = "Jugo de Naranja: Próximo a vencer en 2 días", CreatedAt = fechaSemilla
+            },
+            new InventoryAlert
+            {
+                Id = 20, ProductId = 22, AlertTypeId = 3, AlertStatusId = 2,
+                Message = "Paracetamol 500mg: Próximo a vencer en 30 días", CreatedAt = fechaSemilla.AddHours(-4),
+                AcknowledgedAt = fechaSemilla.AddHours(-3)
+            },
+
+            // ALERTS OF EXCESSIVE STOCK
+            new InventoryAlert
+            {
+                Id = 21, ProductId = 7, AlertTypeId = 4, AlertStatusId = 4,
+                Message = "Agua Mineral: Stock excesivo detectado (30 unidades)", CreatedAt = fechaSemilla.AddDays(-1),
+                AcknowledgedAt = fechaSemilla.AddHours(-12)
+            },
+
+            // ALERTS OF PRICE CHANGED
+            new InventoryAlert
+            {
+                Id = 22, ProductId = 11, AlertTypeId = 5, AlertStatusId = 3,
+                Message = "Café Molido: Precio actualizado de €6.80 a €7.50", CreatedAt = fechaSemilla.AddHours(-6),
+                AcknowledgedAt = fechaSemilla.AddHours(-5), ResolvedAt = fechaSemilla.AddHours(-4)
+            },
+            new InventoryAlert
+            {
+                Id = 23, ProductId = 27, AlertTypeId = 5, AlertStatusId = 2,
+                Message = "Bombillas LED: Precio actualizado de €3.90 a €4.50", CreatedAt = fechaSemilla.AddHours(-1),
+                AcknowledgedAt = fechaSemilla.AddMinutes(-30)
+            }
+        );
     }
 }

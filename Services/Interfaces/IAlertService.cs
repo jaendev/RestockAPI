@@ -2,7 +2,7 @@ using RestockAPI.Models;
 
 namespace RestockAPI.Services.Interfaces;
 
-public class IAlertService
+public interface IAlertService
 {
     public Task<List<InventoryAlert>> GetAlertsActive() { throw new NotImplementedException(); }
     public Task<List<InventoryAlert>> MarckAsRead() { throw new NotImplementedException(); }

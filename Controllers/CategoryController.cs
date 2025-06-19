@@ -168,7 +168,7 @@ public class CategoryController : ControllerBase
         return Ok(categories);
     }
 
-    [HttpGet("getCategoriesByColor/{color:string}")]
+    [HttpGet("getCategoriesByColor/{color}")]
     public async Task<IActionResult> GetCategoriesByColor(string color)
     {
         var categories = await _categoryService.GetCategoriesByColorAsync(color);

@@ -50,6 +50,18 @@ public class ProductService : IProductService
         
         return product?.ToDto();
     }
+
+    public async Task<object> GetCantProductsAsync()
+    {
+        var countProducts = await _context.Products
+            .CountAsync();
+
+        return new
+        {
+            totalProducts = countProducts,
+            timestamp = DateTime.UtcNow
+        };
+    }
     
     public async Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(int categoryId)
     {
@@ -72,6 +84,18 @@ public class ProductService : IProductService
             .ToListAsync();
         
         return products.Select(p => p.ToDto());
+    }
+    
+    public async Task<object> GetCantLowStockProductsAsync()
+    {
+        var countLowStockProducts = await _context.Products
+            .CountAsync(p => p.IsActive && p.CurrentStock <= p.MinimumStock);
+        
+        return new
+        {
+            totalProducts = countLowStockProducts,
+            timestamp = DateTime.UtcNow
+        };
     }
 
     public async Task<IEnumerable<ProductDto>> GetOutOfStockProductsAsync()

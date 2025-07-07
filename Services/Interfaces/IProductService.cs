@@ -8,9 +8,11 @@ public interface IProductService
     // Get methods - return DTOs for display
     Task<IEnumerable<ProductDto>> GetAllProductsAsync();
     Task<IEnumerable<ProductDto>> GetActiveProductsAsync();
+    Task<object> GetCantProductsAsync();
     Task<ProductDto?> GetProductByIdAsync(int id);
     Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(int categoryId);
     Task<IEnumerable<ProductDto>> GetLowStockProductsAsync();
+    Task<object> GetCantLowStockProductsAsync();
     Task<IEnumerable<ProductDto>> GetOutOfStockProductsAsync();
     
     // CRUD methods - return DTOs or bool for success

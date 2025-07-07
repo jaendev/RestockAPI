@@ -9,6 +9,7 @@ public interface ICategoryService
     // ================================
     Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync();
     Task<IEnumerable<CategoryDto>> GetActiveCategoriesAsync();
+    Task<object> GetCantCategoriesAsync();
     Task<CategoryDto?> GetCategoryByIdAsync(int id);
     Task<CategoryStatsDto?> GetCategoryWithStatsAsync(int id);
     

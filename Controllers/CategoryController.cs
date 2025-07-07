@@ -32,6 +32,13 @@ public class CategoryController : ControllerBase
         var categories = await _categoryService.GetActiveCategoriesAsync();
         return Ok(categories);
     }
+    
+    [HttpGet("getCantCategories")]
+    public async Task<IActionResult> GetCantCategories()
+    {
+        var cantCategories = await _categoryService.GetCantCategoriesAsync();
+        return Ok(cantCategories);
+    }
 
     [HttpGet("getCategoryById/{id:int}")]
     public async Task<IActionResult> GetCategoryById(int id)

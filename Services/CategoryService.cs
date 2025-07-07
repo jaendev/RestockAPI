@@ -37,6 +37,18 @@ public class CategoryService : ICategoryService
         return categories.Select(c => c.ToDto());
     }
 
+    public async Task<object> GetCantCategoriesAsync()
+    {
+        var categories = await _context.Categories
+            .CountAsync();
+        
+        return new
+        {
+            totalCategories = categories,
+            timstamp = DateTime.UtcNow
+        };
+    }
+
     public async Task<CategoryDto?> GetCategoryByIdAsync(int id)
     {
         var category = await _context.Categories

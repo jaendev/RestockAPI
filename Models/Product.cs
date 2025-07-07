@@ -65,9 +65,9 @@ public class Product
     public int DaysOld => (DateTime.UtcNow - CreatedAt).Days;
     
     [NotMapped]
-    public string StockStatus => IsOutOfStock ? "Out of Stock" : 
-        IsLowStock ? "Low Stock" : 
-        "Normal Stock";
+    public string StockStatus => IsOutOfStock ? "Sin Stock" : 
+        IsLowStock ? "Bajo" : 
+        "Normal";
     
     // This will now use the Unit navigation property
     [NotMapped]

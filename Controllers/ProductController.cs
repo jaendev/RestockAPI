@@ -43,6 +43,13 @@ public class ProductController : ControllerBase
         var product = await _productService.GetProductByIdAsync(id);
         return Ok(product);
     }
+    
+    [HttpGet("getCantProducts")]
+    public async Task<IActionResult> GetCantProducts()
+    {
+        var cantProducts = await _productService.GetCantProductsAsync();
+        return Ok(cantProducts);
+    }
 
     [HttpGet("getProductsByCategory/{categoryId:int}")]
     public async Task<IActionResult> GetProductsByCategory(int categoryId)
@@ -56,6 +63,13 @@ public class ProductController : ControllerBase
     {
         var products = await _productService.GetLowStockProductsAsync();
         return Ok(products);
+    }
+    
+    [HttpGet("getCantLowStockProducts")]
+    public async Task<IActionResult> GetCantLowStockProducts()
+    {
+        var cantProducts = await _productService.GetCantLowStockProductsAsync();
+        return Ok(cantProducts);
     }
 
     [HttpGet("getOutOfStockProducts")]

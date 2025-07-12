@@ -69,4 +69,27 @@ public static class ProductExtensions
         product.IsActive = dto.IsActive;
         product.UpdatedAt = DateTime.UtcNow;
     }
+    
+    public static ProductSummaryDto ToSummaryDto(this Product product)
+    {
+        return new ProductSummaryDto
+        {
+            Id = product.Id,
+            Name = product.Name,
+            Description = product.Description,
+            CurrentStock = product.CurrentStock,
+            MinimumStock = product.MinimumStock,
+            Price = product.Price,
+            UnitSymbol = product.Unit?.Symbol ?? "units",
+            CategoryName = product.Category?.Name ?? "No category",
+            CategoryColor = product.Category?.Color ?? "#6b7280",
+            IsActive = product.IsActive,
+        
+            // Computed properties
+            IsLowStock = product.IsLowStock,
+            IsOutOfStock = product.IsOutOfStock,
+            StockStatus = product.StockStatus,
+            TotalValue = product.TotalValue
+        };
+    }
 }

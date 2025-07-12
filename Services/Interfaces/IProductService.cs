@@ -5,7 +5,6 @@ namespace RestockAPI.Services.Interfaces;
 
 public interface IProductService
 {
-    // Get methods - return DTOs for display
     Task<IEnumerable<ProductDto>> GetAllProductsAsync();
     Task<IEnumerable<ProductDto>> GetActiveProductsAsync();
     Task<object> GetCantProductsAsync();

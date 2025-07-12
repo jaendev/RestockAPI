@@ -44,6 +44,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IInventoryAlertService, InventoryAlertService>();
+builder.Services.AddScoped<IUnitTypeService, UnitTypeService>();
 
 var app = builder.Build();
 

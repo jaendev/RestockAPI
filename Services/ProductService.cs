@@ -212,7 +212,8 @@ public class ProductService : IProductService
             .Where(p => p.IsActive &&
                         (p.Name.Contains(searchTerm)
                          || p.Description!.Contains(searchTerm)
-                         || p.Category.Name.Contains(searchTerm)))
+                         || p.Category.Name.Contains(searchTerm)
+                         || p.Unit.Name.Contains(searchTerm)))
             .OrderBy(p => p.Name)
             .ToListAsync();
         
